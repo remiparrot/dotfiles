@@ -201,29 +201,29 @@ bindsym $mod+r mode "resize"
 
 # rofi to launch app & to find opened app
 bindsym $mod+d exec "rofi -show drun -location 2 -width 100 -lines 5 -sidebar-mode -modi drun,run,ssh -yoffset -3"
-bindsym F2 exec "rofi -show window"
+bindsym $mod+F2 exec "rofi -show window"
 
 #################################################
 # i3bar
 #################################################
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	colors {
-		# Whole color settings
-		background $background
-		separator  $color4
-		statusline $foreground
-
-		# Type			border		background	font
-		focused_workspace	$color4		$color4		$background
-		active_workspace	$color2		$color2		$background
-		inactive_workspace	$background	$background	$foreground
-		urgent_workspace	$color9		$color9		$background
-	}
-        status_command i3status -c /home/fasol/.config/i3/i3status.conf
-	i3bar_command i3bar -t
-}
+#bar {
+#	colors {
+#		# Whole color settings
+#		background $background
+#		separator  $color4
+#		statusline $foreground
+#
+#		# Type			border		background	font
+#		focused_workspace	$color4		$color4		$background
+#		active_workspace	$color2		$color2		$background
+#		inactive_workspace	$background	$background	$foreground
+#		urgent_workspace	$color9		$color9		$background
+#	}
+#        status_command i3status -c /home/fasol/.config/i3/i3status.conf
+#	i3bar_command i3bar -t
+#}
 
 #################################################
 # remove border and title
@@ -258,6 +258,11 @@ bindsym XF86Display exec lxrandr
 bindsym $mod+p exec mpc toggle
 bindsym $mod+comma exec mpc prev
 bindsym $mod+period exec mpc next
+
+#################################################
+# lockscreen preprocess
+#################################################
+#exec --no-startup-id betterlockscreen -w dim -u "/home/fasol/Images/wallpaper/three_pistons_lodge_by_artofjokinen-d94egqp.png"
 
 #################################################
 # Wallpaper
@@ -297,3 +302,9 @@ gaps inner 0
 gaps outer 0
 smart_gaps on
 smart_borders on
+
+#################################################
+# polybar
+#################################################
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+

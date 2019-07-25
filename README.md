@@ -1,5 +1,11 @@
 # dotfiles
 
+## package list
+i3-gaps zsh rofi rxvt-unicode firefox
+
+## AUR list
+oh-my-zsh-git polybar betterlockscreen
+
 ## mpd, mpc and ncmpcpp install
 Install the packages : `sudo pacman -S mpd mpc ncmpcpp`.\
 Then enable the mpd service with : `systemctl --user enable mpd` (and start it).\

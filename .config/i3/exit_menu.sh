@@ -3,7 +3,7 @@
 res=$(rofi -width 15 -lines 5 -combi-hide-mode-prefix true -dmenu < ~/.config/i3/exit_menu_opt.lst)
 
 if [ $res = "lock" ]; then
-    i3lock --image=/home/fasol/Images/wallpaper/three_pistons_lodge_by_artofjokinen-d94egqp.png
+    betterlockscreen -l
 fi
 if [ $res = "logout" ]; then
     i3-msg exit
