@@ -47,7 +47,7 @@ white1      = ${xrdb:color7:#000000}
 white2      = ${xrdb:color15:#000000}    
 
 [bar/bottom]
-monitor = eDP1
+monitor = ${env:MONITOR:}
 height = 17
 
 bottom = true
@@ -69,22 +69,22 @@ module-margin-right = 1
 
 separator = |
 
-font-0 = DejaVu Sans Mono:pixelsize=9;1:antialias=true;2
+font-0 = monospace:pixelsize=9;1:antialias=true;2
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
-font-3 = Font Awesome 5 Free:style=Regular:pixelsize=9;2
-font-4 = Font Awesome 5 Free:style=Solid:pixelsize=9;2
-font-5 = Font Awesome 5 Brands:pixelsize=9;2
+font-3 = Font Awesome 6 Free:style=Regular:pixelsize=9;2
+font-4 = Font Awesome 6 Free:style=Solid:pixelsize=9;2
+font-5 = Font Awesome 6 Brands:pixelsize=9;2
 
 modules-left = i3
-modules-center = mpd
+modules-center = 
 modules-right = keyboard wlan eth battery xbacklight pulseaudio date
 
-;tray-position = right
+tray-position = right
 ;tray-padding = 2
 ;tray-background = #0063ff
 
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 

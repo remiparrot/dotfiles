@@ -27,7 +27,15 @@ Plugin 'VundleVim/Vundle.vim'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'lervag/vimtex'
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'lervag/vimtex'
+"Plugin 'FastFold'
+
+"Plugin 'languagetool-org/languagetool'
+Plugin 'rhysd/vim-grammarous'
+"Plugin 'dpelle/vim-LanguageTool'
+Plugin 'NLKNguyen/papercolor-theme'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,17 +52,17 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
-"" General
+" General
 set number	" Show line numbers
 set linebreak	" Break lines at word (requires Wrap lines)
-"set showbreak=+++ 	" Wrap-broken line prefix
-"set textwidth=100	" Line wrap (number of cols)
+"set showbreak=+++ 	 Wrap-broken line prefix
+"set textwidth=100	 Line wrap (number of cols)
 set showmatch	" Highlight matching brace
 set visualbell	" Use visual bell (no beeping)
  
-"set hlsearch	" Highlight all search results
+"set hlsearch	 Highlight all search results
 set smartcase	" Enable smart-case search
-set ignorecase	" Always case-insensitive
+"set ignorecase	 Always case-insensitive
 set incsearch	" Searches for strings incrementally
 
 set tabstop=4	" For tab characters that appear 4-spaces-wide
@@ -69,12 +77,42 @@ set ruler	" Show row and column ruler information
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
-set foldmethod=indent
+set foldmethod=syntax
+"set foldmethod=indent
+"set foldmethod=expr
+"set foldexpr=vimtex#fold#level(v:lnum)
+"set foldtext=vimtex#fold#text()
+let g:tex_fold_enabled=1
+"set fillchars=fold:\ 
 
 set whichwrap=b,s,<,>,[,]
 
+let g:Imap_UsePlaceHolders=0
+
 syntax on
-colorscheme peachpuff
-hi Folded ctermbg=234
-hi MatchParen ctermbg=235
-hi Visual term=reverse cterm=reverse ctermbg=232
+"colorscheme peachpuff
+"hi Folded ctermbg=234
+"hi MatchParen ctermbg=235
+"hi Visual term=reverse cterm=reverse ctermbg=232
+
+au BufNewFile,BufRead *.tikz set filetype=tex
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"						Grammarous
+let g:grammarous#languagetool_cmd='languagetool'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"						LanguageTool
+"let g:languagetool_jar='$HOME/.vim/bundle/vim-LanguageTool/LanguageTool-5.2/languagetool-commandline.jar'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"						 vimdiff
+"hi DiffAdd      ctermfg=0	gui=none    guifg=NONE          guibg=#bada9f
+"hi DiffChange   ctermfg=0	gui=none    guifg=NONE          guibg=#e5d5ac
+"hi DiffDelete   ctermfg=0	gui=bold    guifg=#ff8080       guibg=#ffb0b0
+"hi DiffText     ctermfg=0	gui=none    guifg=NONE          guibg=#8cbee2
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set background=dark
+colorscheme PaperColor

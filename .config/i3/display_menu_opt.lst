@@ -1,5 +1,4 @@
-default
-HDMI
-HDMI-only
-VGA
-VGA-only
+primary-only
+second-only
+top-extend
+duplicate

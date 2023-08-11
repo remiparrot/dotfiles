@@ -30,6 +30,7 @@
 *.color15:      #c5c8c6
 
 !! URxvt
+URxvt.perl-ext-common: resize-font
 URxvt.font: 		xft:Mono:size=9
 URxvt.letterSpace: 	-1
 URxvt.depth: 		24
@@ -39,7 +40,8 @@ URxvt.scrollBar: 	false
 !URxvt.internalBorder: 	3
 !URxvt.borderColor: 	#81a2be
 !URxvt.borderLess: 	false
-URxvt.geometry: 	75x22
+!URxvt.geometry: 	75x22
+URxvt.geometry: 	80x-1
 !URxvt*inheritPixmap: true
 !URxvt*transparent: true
 ! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens

@@ -200,8 +200,9 @@ bindsym $mod+r mode "resize"
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # rofi to launch app & to find opened app
-bindsym $mod+d exec "rofi -show drun -location 2 -width 100 -lines 5 -sidebar-mode -modi drun,run,ssh -yoffset -3"
-bindsym $mod+F2 exec "rofi -show window"
+#bindsym $mod+d exec "rofi -show drun -location 2 -width 100 -lines 5 -sidebar-mode -modi drun,run,ssh -theme nord"
+bindsym $mod+d exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+F2 exec "rofi -show window -theme nord"
 
 #################################################
 # i3bar
@@ -235,6 +236,7 @@ for_window [class="^.*"] border pixel 2
 # Apps keybind
 #################################################
 bindsym $mod+w exec firefox
+bindsym $mod+x exec thunderbird
 bindsym $mod+less exec `DESKTOP_SESSION=kde dolphin`
 
 
@@ -285,7 +287,8 @@ exec feh --bg-scale /home/fasol/Images/wallpaper/pdkx9wx2uv1x.png
 #     bindsym Escape mode "default"
 # }
 # bindsym $mod+Delete mode $mode_system
-bindsym $mod+Delete exec ~/.config/i3/exit_menu.sh
+#bindsym $mod+Delete exec ~/.config/i3/exit_menu.sh
+bindsym $mod+Delete exec --no-startup-id ~/.config/rofi/powermenu/type-2/powermenu.sh
 
 #################################################
 # Display menu
@@ -302,6 +305,17 @@ gaps inner 0
 gaps outer 0
 smart_gaps on
 smart_borders on
+
+
+#################################################
+# Network Manager Applet
+#################################################
+exec --no-startup-id nm-applet
+
+#################################################
+# picom
+#################################################
+exec --no-startup-id picom -b
 
 #################################################
 # polybar
