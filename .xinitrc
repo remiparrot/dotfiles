@@ -34,9 +34,10 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 
-case $WM in
-	'kde') exec_arg="startkde";;
-	'i3') exec_arg="i3";;
-	*) exec_arg="i3";;
-esac
-exec $exec_arg
+#case $WM in
+#	'kde') exec_arg="startkde";;
+#	'i3') exec_arg="i3";;
+#	*) exec_arg="i3";;
+#esac
+#exec $exec_arg
+exec i3

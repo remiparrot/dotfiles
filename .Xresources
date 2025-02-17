@@ -30,8 +30,8 @@
 *.color15:      #c5c8c6
 
 !! URxvt
-URxvt.perl-ext-common: resize-font
-URxvt.font: 		xft:Mono:size=9
+URxvt.perl-ext-common: 	resize-font
+URxvt.font: 		xft:FiraMono:size=10
 URxvt.letterSpace: 	-1
 URxvt.depth: 		24
 URxvt.cursorBlink: 	false
